@@ -33,3 +33,8 @@ body {
   text-decoration: none;
   color: yellow;  
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
