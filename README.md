@@ -96,7 +96,7 @@ You can deploy this project using:
 👤 **Ngala Mac**
 
 - GitHub: [ngalamac](https://github.com/ngalamac)
-- LinkedIn: [Ngala Mac](https://www.linkedin.com/in/ngala-mac-872a65220/)
+- LinkedIn: [Ngala Mac](https://www.linkedin.com/in/...)
 
 
 ## 🔭 Future Features <a name="future-features"></a>
