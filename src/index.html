@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[ Project title ]</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
+    <dialog id="modal-comment">
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <div class="img-parent">
+                    <img src="" alt="Show image" class="modal-image">
+                </div>
+                <span><a href="" id="close">&times</a></span>
+            </div>
+            <h2 class="name-show">Name of the show</h2>
+            <div class="detail">
+                <div>
+                    <p>Type:</p>
+                    <p>Status:</p>
+                    <p>Language:</p>
+                </div>
+                <div>
+                    <p>Genres:</p>
+                    <p>Premiere date:</p>
+                    <p>End date:</p>
+                </div>
+            </div>
+            <div class="comment-div">
+                <h3 class="commnet-header">Comments(2)</h3>
+                <div class="commnets">
+                    <p>12/09/2023 Wac: An amzing web app! An amzing web app! An amzing web app! An amzing web app! An
+                        amzing web app! An amzing web app! An amzing web app! An amzing web app! An amzing web app! An
+                        amzing web app! An amzing web app! An amzing web app! An amzing web app! An amzing web app!</p>
+                    <p>12/09/2023 Wac: An amzing web app!</p>
+                    <p>12/09/2023 Wac: An amzing web app!</p>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <h3>Add a comment</h3>
+                <form action="" method="post">
+                    <input type="text" name="uname" id="uname" placeholder="Your name" required>
+                    <br>
+                    <br>
+                    <textarea name="comment" id="comment" cols="50" rows="5"  placeholder="Your insights..." required></textarea>
+                    <br>
+                    <br>
+                    <button type="submit">Comment</button>
+                </form>
+            </div>
+            
+        </div>
+    </dialog>
+
     <header class="header">
         <ul>
             <li><a class="show active" href="">Shows</a></li>
-            <li><a id = "season" href="">Seasons</a></li>
-            <li><a id = "item" href="">Schedule</a></li>
+            <li><a id="season" href="">Seasons</a></li>
+            <li><a id="item" href="">Schedule</a></li>
         </ul>
     </header>
-
     <main id="parent">
     </main>
 
@@ -22,4 +70,5 @@
 
     <script src="index.js"></script>
 </body>
+
 </html>
