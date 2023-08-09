@@ -129,6 +129,14 @@ class DOMManipulator {
     return comment;
   };
 
+  /*getComment = (item_id) => {
+    loader.url =
+      `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rfuakKcpJ3xCvEF2UbWq/comments?item_id=${item_id}`;
+      const comment = loader.getData(commentData);
+      console.log(comment);
+      return comment;
+  }*/
+
   createElement = (type, clss, id) => {
     const element = document.createElement(type);
     if (clss) {
