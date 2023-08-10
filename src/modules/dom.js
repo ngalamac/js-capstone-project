@@ -1,4 +1,4 @@
-import APILoader from "./api_loader.js";
+import APILoader from './api_loader.js';
 
 const loader = new APILoader();
 
@@ -6,7 +6,7 @@ let commentSubmitFlag = false;
 
 class DOMManipulator {
   displayItems = async () => {
-    loader.url = "https://api.tvmaze.com/shows";
+    loader.url = 'https://api.tvmaze.com/shows';
     const data = await loader.getData();
     data.forEach((show) => {
       this.createCard(show);
@@ -16,10 +16,7 @@ class DOMManipulator {
     menuText.innerHTML = `Shows(${count})`;
   };
 
-  showCounter = async (data) => {
-    console.log(data);
-    return await data.length;
-  }
+  showCounter = async (data) => data.length;
 
   displayLikes = async (likes, noOfLikes, showName) => {
     const lk = await likes;
@@ -37,27 +34,27 @@ class DOMManipulator {
 
   createCard = async (show) => {
     const createData = {
-      card: ["div", ["card"], null],
-      cardWrapper: ["div", ["card-wrapper"], null],
-      showImage: ["img", ["show-image"], "show-image"],
-      nameLikeParent: ["div", ["name-like-parent"], null],
-      span: ["span", ["name"], null],
-      likeParent: ["div", ["like-parent"], null],
-      like: ["a", null, "like"],
-      i: ["i", ["fa", "fa-heart"], null],
-      noOfLikes: ["span", ["no-of-likes"], null],
-      comment: ["button", ["comment"], `${show.name}`],
+      card: ['div', ['card'], null],
+      cardWrapper: ['div', ['card-wrapper'], null],
+      showImage: ['img', ['show-image'], 'show-image'],
+      nameLikeParent: ['div', ['name-like-parent'], null],
+      span: ['span', ['name'], null],
+      likeParent: ['div', ['like-parent'], null],
+      like: ['a', null, 'like'],
+      i: ['i', ['fa', 'fa-heart'], null],
+      noOfLikes: ['span', ['no-of-likes'], null],
+      comment: ['button', ['comment'], `${show.name}`],
     };
     const elem = this.batchCreateElements(createData);
 
-    elem.showImage.src = show.image.original;
+    elem.showImage.src = show.image.medium;
     elem.span.innerHTML = show.name;
-    elem.noOfLikes.innerHTML = "0 likes";
+    elem.noOfLikes.innerHTML = '0 likes';
     this.likeItem(elem.like, show.name);
     const likes = await this.loadLikes();
     this.displayLikes(likes, elem.noOfLikes, show.name);
-    elem.comment.innerHTML = "Comments";
-    elem.like.href = "";
+    elem.comment.innerHTML = 'Comments';
+    elem.like.href = '';
     const appendData = [
       { child: elem.cardWrapper, parent: elem.card },
       { child: elem.showImage, parent: elem.cardWrapper },
@@ -71,12 +68,11 @@ class DOMManipulator {
     ];
 
     this.batchAppendElements(appendData, true);
-    const item_id = show.name;
     this.showModal(elem.comment);
   };
 
   createCommentModal = () => {
-    const modal = document.getElementById("modal-comment");
+    const modal = document.getElementById('modal-comment');
     const modalContent = `<div class="modal-wrapper">
         <div class="modal-header">
             <div class="img-parent">
@@ -118,32 +114,37 @@ class DOMManipulator {
     const nameShow = document.getElementById('name-show');
     const imageShow = document.getElementById('modal-image');
     const commentHeader = document.getElementById('commnet-header');
+    const comments = document.getElementById('commnets');
+
+    comments.innerHTML = '';
+    div1.innerHTML = '';
+    div2.innerHTML = '';
     const createData = {
-      type: ["p", null, null],
-      status: ["p", null, null],
-      lang: ["p", null, null],
-      genre: ["p", null, null],
-      premiere: ["p", null, null],
-      end: ["p", null, null]
-    }
+      type: ['p', null, null],
+      status: ['p', null, null],
+      lang: ['p', null, null],
+      genre: ['p', null, null],
+      premiere: ['p', null, null],
+      end: ['p', null, null],
+    };
 
     const elem = this.batchCreateElements(createData);
     loader.url = `https://api.tvmaze.com/search/shows?q=${name}`;
     const data = await loader.getData();
     const appendData = [
-      { child: elem.type, parent: div1},
-      { child: elem.status, parent: div1},
-      { child: elem.lang, parent: div1},
-      { child: elem.genre, parent: div2},
-      { child: elem.premiere, parent: div2},
-      { child: elem.end, parent: div2}
+      { child: elem.type, parent: div1 },
+      { child: elem.status, parent: div1 },
+      { child: elem.lang, parent: div1 },
+      { child: elem.genre, parent: div2 },
+      { child: elem.premiere, parent: div2 },
+      { child: elem.end, parent: div2 },
     ];
     this.batchAppendElements(appendData, false);
 
     const showName = data[0].show.name;
 
-    nameShow.innerHTML= showName;
-    imageShow.src= data[0].show.image.medium;
+    nameShow.innerHTML = showName;
+    imageShow.src = data[0].show.image.medium;
     elem.type.innerHTML = `Type: ${data[0].show.type}`;
     elem.status.innerHTML = `Status: ${data[0].show.status}`;
     elem.lang.innerHTML = `Language: ${data[0].show.language}`;
@@ -152,22 +153,20 @@ class DOMManipulator {
     elem.end.innerHTML = `Ended at: ${data[0].show.ended}`;
 
     const noComments = await this.commentCounter(showName);
-    commentHeader.innerHTML= `Comments(${noComments})`;
+    commentHeader.innerHTML = `Comments(${noComments})`;
     this.submitComment(showName);
-
   };
 
   likeItem = (likebutton, id) => {
-    likebutton.addEventListener("click", async (event) => {
+    likebutton.addEventListener('click', async (event) => {
       event.preventDefault();
-      loader.url =
-        "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DXeDvMiVvdYqzelJx7jP/likes";
+      loader.url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DXeDvMiVvdYqzelJx7jP/likes';
       const itemId = {
         item_id: id,
       };
       const likes = await loader.setData(itemId);
       if (likes === 201) {
-        const lk = likebutton.parentNode.childNodes[1].innerHTML.split(" ")[0];
+        const lk = likebutton.parentNode.childNodes[1].innerHTML.split(' ')[0];
         likebutton.parentNode.childNodes[1].innerHTML = `${
           Number(lk) + 1
         } likes`;
@@ -176,77 +175,68 @@ class DOMManipulator {
   };
 
   loadLikes = async () => {
-    loader.url =
-      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DXeDvMiVvdYqzelJx7jP/likes";
+    loader.url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DXeDvMiVvdYqzelJx7jP/likes';
     const likes = await loader.getData();
     return likes;
   };
 
   addComment = (commentData) => {
-    loader.url =
-      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DXeDvMiVvdYqzelJx7jP/comments";
+    loader.url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DXeDvMiVvdYqzelJx7jP/comments';
     const comment = loader.setData(commentData);
     return comment;
   };
 
-  getComment = async (item_id) => {
-      loader.url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DXeDvMiVvdYqzelJx7jP/comments?item_id=${item_id}`;
-      let comment = await loader.getData();
-      console.log('comment.error.status');
-      if (comment.error && comment.error.status > 210) {
-        console.log(comment.error.status);
-        comment = null;
-      }
-      console.log(item_id, "=>", comment);
-      this.createComments(comment);
-      if(comment === null) {
-        return 0;
-      }
-      return comment.length;
+  getComment = async (itemId) => {
+    loader.url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DXeDvMiVvdYqzelJx7jP/comments?item_id=${itemId}`;
+    let comment = await loader.getData();
+    if (comment.error && comment.error.status > 210) {
+      comment = null;
+    }
+    this.createComments(comment);
+    if (comment === null) {
+      return 0;
+    }
+    return comment.length;
   };
 
   createComments = (cmts) => {
-    const commentBox = document.getElementById("commnets");
+    const commentBox = document.getElementById('commnets');
     if (cmts) {
       cmts.forEach((cmt) => {
-        console.log(33);
-        const p = document.createElement("p");
-        console.log(`${cmt.creation_date}-${cmt.username}: ${cmt.comment}`);
+        const p = document.createElement('p');
         p.innerHTML = `${cmt.creation_date}\t${cmt.username}: ${cmt.comment}`;
         commentBox.appendChild(p);
       });
     }
   };
 
-  submitComment = (item_id) => {
-    const frmComment = document.getElementById("frm-comment");
-    frmComment.addEventListener("submit", async (event) => {
+  submitComment = (itemId) => {
+    const frmComment = document.getElementById('frm-comment');
+    frmComment.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const user = frmComment.elements["uname"].value;
-      const comment = frmComment.elements["comment"].value;
+      const user = frmComment.elements.uname.value;
+      const comment = frmComment.elements.comment.value;
 
       const data1 = {
-        item_id: item_id,
+        item_id: itemId,
         username: user,
-        comment: comment,
+        comment,
       };
 
-
-      let date = new Date();
-      let day = date.getDate();
-      let month = date.getMonth();
-      let year = date.getFullYear();
+      const date = new Date();
+      const day = date.getDate();
+      const month = date.getMonth();
+      const year = date.getFullYear();
 
       const data2 = {
         creation_date: `${year}-${month}-${day}`,
         username: user,
-        comment: comment,
+        comment,
       };
       const res = await this.addComment(data1);
       if (res === 201 && !commentSubmitFlag) {
-        console.log(201);
-        frmComment.elements["uname"].value = "";
-        frmComment.elements["comment"].value = "";
+        frmComment.elements.uname.value = '';
+        frmComment.elements.comment.value = '';
         this.createComments([data2]);
         commentSubmitFlag = true;
       }
@@ -286,26 +276,25 @@ class DOMManipulator {
     appendData.forEach((elt) => {
       this.appendElement(elt.child, elt.parent);
     });
-    if(appendToParent) {      
-      const parent = document.getElementById("parent");
+    if (appendToParent) {
+      const parent = document.getElementById('parent');
       parent.appendChild(appendData[0].parent);
     }
-    
   };
 
   showModal = (commentBtn) => {
-    const modal = document.getElementById("modal-comment");
-    commentBtn.addEventListener("click", () => {
+    const modal = document.getElementById('modal-comment');
+    commentBtn.addEventListener('click', () => {
       modal.showModal();
-      console.log(commentBtn.id);
       this.populateModal(commentBtn.id);
       return commentBtn.id;
     });
   };
 
   closeModal = () => {
-    const modal = document.getElementById("modal-comment");
-    close.addEventListener("click", (event) => {
+    const modal = document.getElementById('modal-comment');
+    const close = document.getElementById('close');
+    close.addEventListener('click', (event) => {
       event.preventDefault();
       modal.close();
     });
