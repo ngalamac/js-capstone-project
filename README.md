@@ -98,6 +98,11 @@ You can deploy this project using:
 - GitHub: [ngalamac](https://github.com/ngalamac)
 - LinkedIn: [Ngala Mac](https://www.linkedin.com/in/...)
 
+👤 **wacoo**
+
+- GitHub: [wacoo](https://github.com/wacoo)
+- LinkedIn: [Wondmagegn](https://www.linkedin.com/in/wondmagegn-abriham-b867289a)
+
 
 ## 🔭 Future Features <a name="future-features"></a>
 
