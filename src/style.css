@@ -108,6 +108,7 @@ body {
 }
 
 .like-parent {
+  width: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -175,8 +176,9 @@ header .active {
 }
 
 .modal-image {
-  width: 300px;
-  height: 400px;
+  width: 800px;
+  height: 500px;
+  margin-left: 35px;
 }
 
 #close {

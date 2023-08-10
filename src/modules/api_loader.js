@@ -18,11 +18,8 @@ class APILoader {
           },
           body: JSON.stringify(data),
         });
-        // const result = await res.json();
-        // console.log(res.status);
         return res.status;
       } catch (error) {
-        console.log('error');
         return error;
       }
     }
