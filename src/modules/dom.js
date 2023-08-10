@@ -7,14 +7,7 @@ const parent = document.getElementById("parent");
 const loader = new APILoader();
 const nav = new Navigation();
 
-class DOMManipulator {
-  displayItems = async () => {
-    loader.url = "https://api.tvmaze.com/shows";
-    const data = await loader.getData();
-    data.forEach((show) => {
-      this.createCard(show);
-    });
-  };
+
 
   createCard = async (show) => {
     const createData = {
