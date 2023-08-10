@@ -211,6 +211,7 @@ class DOMManipulator {
   };
 
   submitComment = (itemId) => {
+    const commentHeader = document.getElementById('commnet-header');
     const frmComment = document.getElementById('frm-comment');
     frmComment.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -238,6 +239,7 @@ class DOMManipulator {
         frmComment.elements.uname.value = '';
         frmComment.elements.comment.value = '';
         this.createComments([data2]);
+        commentHeader.innerHTML = `Comments(${Number(commentHeader.innerHTML.charAt(9)) + 1})`;
         commentSubmitFlag = true;
       }
     });
