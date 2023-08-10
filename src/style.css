@@ -42,6 +42,13 @@ body {
   color: rgb(24, 24, 23);
 }
 
+.footer a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-style: italic;
+}
+
 .header a:hover {
   background-color: lightgray;
   color: black;
@@ -132,6 +139,9 @@ body {
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: -75px;
 }
@@ -141,6 +151,10 @@ header .active {
   color: #fff;
 }
 
+.footer p {
+  font-style: italic;
+  color: black;
+}
 
 /* Modal */
 
