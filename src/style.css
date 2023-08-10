@@ -1,0 +1,292 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header,
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: lightblue;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  font-weight: 700;
+}
+
+.header ul {
+  margin-right: 12px;
+  display: flex;
+  justify-content: right;
+  list-style-type: none;
+}
+
+.header li {
+  padding: 0 12px;
+  margin-right: 12px;
+}
+
+.header a {
+  padding: 12px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: rgb(24, 24, 23);
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.header a:hover {
+  background-color: lightgray;
+  color: black;
+  border: black solid 2px;
+}
+
+#parent {
+  margin: 24px 0;
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  column-gap: 24px;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+#like i {
+  margin-top: 5px;
+  text-align: right;
+  color: red;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  margin: 12px;
+}
+
+.no-of-likes {
+  font-size: 11px;
+  padding: 5px 0;
+  text-align: right;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  margin: 12px;
+  border-radius: 5px;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a393eb;
+  border: gray solid 1px;
+  border-radius: 5px;
+  color: #2b2a2a;
+  font-family: Arial, sans-serif;
+}
+
+#show-image {
+  width: 180px;
+  height: 200px;
+  margin: 5px;
+}
+
+.name-like-parent {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: aquamarine;
+}
+
+.like-parent {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.comment {
+  width: 100%;
+  height: 25px;
+  background-color: #fff;
+  border: #fff solid 2px;
+  color: gray;
+  border-radius: 0;
+  font-weight: 600;
+}
+
+.comment:hover {
+  background-color: lightgray;
+  border: lightgray;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -75px;
+}
+
+header .active {
+  background-color: #000;
+  color: #fff;
+}
+
+.footer p {
+  font-style: italic;
+  color: black;
+}
+
+/* Modal */
+
+#modal-comment {
+  width: 80%;
+  margin: 6% 10% 0;
+  background-color: rgba(240, 144, 18, 0.9);
+  border-radius: 15px;
+}
+
+.modal-wrapper {
+  height: 220vh;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 24px;
+}
+
+.img-parent {
+  width: 85%;
+  margin: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-image {
+  width: 800px;
+  height: 500px;
+  margin-left: 35px;
+}
+
+#close {
+  height: 50px;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: right;
+  padding: 0 12px;
+  margin: 0;
+  text-decoration: none;
+  color: black;
+}
+
+#close:hover {
+  border: black solid 2px;
+}
+
+#close:active {
+  background-color: #fff;
+  color: #000;
+  border: black solid 2px;
+}
+
+.name-show {
+  margin: 24px;
+  text-align: center;
+}
+
+.detail {
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.detail p {
+  margin: 12px;
+  font-weight: 600;
+}
+
+.commnet-header {
+  margin: 24px;
+}
+
+.comment-div {
+  width: 70%;
+  margin: 24px;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+  border: gray solid 2px;
+  border-radius: 10px;
+}
+
+.comment-div p {
+  margin: 12px;
+  background-color: rgb(75, 74, 74);
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.form-wrapper {
+  width: 70%;
+}
+
+.form-wrapper h3 {
+  width: 100%;
+  text-align: center;
+  margin: 40px 12px;
+}
+
+input {
+  width: 200px;
+  height: 25px;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+textarea {
+  padding: 0 5px;
+}
+
+#modal-comment button {
+  width: 120px;
+  height: 30px;
+  background-color: #fff;
+  color: black;
+  font-weight: 600;
+  border-radius: 5px;
+  border: black solid 2px;
+}
+
+#modal-comment button:hover {
+  background-color: gray;
+}
