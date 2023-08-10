@@ -4,6 +4,11 @@ import  APILoader from '../modules/api_loader.js';
 const loader = new APILoader();
 const dom = new DOMManipulator();
 
+describe('Test show and comment counters', () => {
+    test('Test show counter', async () => {
+        const shows = ['Under the Dome', 'Person fo interest', 'Bitten', 'The Strain'];
+        expect(await dom.showCounter(shows)).toBe(4);
+    });
 
     test('Test comment counter', async () => {
         const comment = jest.spyOn(dom, 'getComment').mockImplementation(() => {
