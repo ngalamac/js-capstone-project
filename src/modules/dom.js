@@ -16,6 +16,15 @@ class DOMManipulator {
     });
   };
 
+displayLikes = async (likes, noOfLikes, showName) => {
+    const lk = await likes;
+    lk.forEach((like) => {
+      if (like.item_id === showName) {
+        noOfLikes.innerHTML = `${like.likes} likes`;
+      }
+    });
+  }
+  
   createCard = async (show) => {
     const createData = {
       card: ["div", ["card"], null],
