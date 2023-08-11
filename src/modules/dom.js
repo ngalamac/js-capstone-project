@@ -1,7 +1,8 @@
 import APILoader from './api_loader.js';
+import Counter from './item_counter.js';
 
 const loader = new APILoader();
-
+const counter = new Counter();
 let commentSubmitFlag = false;
 
 class DOMManipulator {
@@ -10,13 +11,12 @@ class DOMManipulator {
     const data = await loader.getData();
     data.forEach((show) => {
       this.createCard(show);
+      counter.countShow();
     });
-    const count = await this.showCounter(data);
+    const count = counter.getShowCount();
     const menuText = document.getElementById('show');
     menuText.innerHTML = `Shows(${count})`;
-  };
-
-  showCounter = async (data) => data.length;
+  }
 
   displayLikes = async (likes, noOfLikes, showName) => {
     const lk = await likes;
@@ -152,7 +152,8 @@ class DOMManipulator {
     elem.premiere.innerHTML = `Premiered at: ${data[0].show.premiered}`;
     elem.end.innerHTML = `Ended at: ${data[0].show.ended}`;
 
-    const noComments = await this.commentCounter(showName);
+    await this.commentCounter(showName);
+    const noComments = await counter.getCommentCount();
     commentHeader.innerHTML = `Comments(${noComments})`;
     this.submitComment(showName);
   };
@@ -200,12 +201,15 @@ class DOMManipulator {
   };
 
   createComments = (cmts) => {
+    counter.clearCommentCounter();
     const commentBox = document.getElementById('commnets');
     if (cmts) {
       cmts.forEach((cmt) => {
         const p = document.createElement('p');
+        p.classList.add('user-comment');
         p.innerHTML = `${cmt.creation_date}\t${cmt.username}: ${cmt.comment}`;
         commentBox.appendChild(p);
+        counter.countComment();
       });
     }
   };
