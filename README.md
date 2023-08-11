@@ -19,11 +19,11 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 JAVASCRIPT-CAPSTONE<a name="about-project"></a>
+# 📖 TV Show Spotter<a name="about-project"></a>
 
-This webpage shows a sneak peek into the project I have developed and deployed, showcasing my skills in HTML CSS, Javascript and webpack.
+Introducing "TV Show Spotter" – a captivating web application that brings TV shows to life. Explore a vast collection of shows through visually stunning cards, each featuring the show's name and an enticing image. With a simple click, delve into detailed descriptions in elegant pop-up windows. Immerse yourself further by reading curated comments from passionate viewers, and join the conversation by sharing your own thoughts using the user-friendly comment form. TV Show Spotter combines the thrill of discovery, the beauty of design, and the power of community engagement. Whether you're a seasoned enthusiast or a curious beginner, let TV Show Spotter be your guide to a world of captivating TV shows, all at your fingertips.
 
-**[Javascript-capstone]** is an HTML, CSS and Javascript project
+**[TV Show Spotter]** is an HTML, CSS, and Javascript project
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -35,8 +35,9 @@ This webpage shows a sneak peek into the project I have developed and deployed, 
 - Webpack
 
 ### Key Features <a name="key-features"></a>
-- **Users can add remove books from library**
-- **Display of current date and time**
+- **Browse TV shows**
+- **Like a TV show**
+- **Drop a comment**
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -47,7 +48,7 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 - Visual Studio Code
-- Web browser such as chrome
+- Web browsers such as Chrome
 
 ### Setup
 
@@ -69,7 +70,7 @@ Install this project with:
 
 ### Usage
 
-To run the project, start the html file on live server or run normally from local directory
+To run the project, start the HTML file on the live server or run normally from the local directory
 
 ### Run tests
 
@@ -96,7 +97,12 @@ You can deploy this project using:
 👤 **Ngala Mac**
 
 - GitHub: [ngalamac](https://github.com/ngalamac)
-- LinkedIn: [Ngala Mac](https://www.linkedin.com/in/...)
+- LinkedIn: [Ngala Mac](https://www.linkedin.com/in/ngala-mac-872a65220)
+
+👤 **wacoo**
+
+- GitHub: [wacoo](https://github.com/wacoo)
+- LinkedIn: [Wondmagegn](https://www.linkedin.com/in/wondmagegn-abriham-b867289a)
 
 
 ## 🔭 Future Features <a name="future-features"></a>
@@ -110,12 +116,12 @@ Contributions, issues, and feature requests are welcome!
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project you can go ahead give a star to the repository.
+If you like this project you can go ahead and give a star to the repository.
 
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I give thanks to Microverse community for investing in me. I am looking forth to building more projects
+We give thanks to the Microverse community for investing in me. I am looking forth to building more projects
 
 ## 📝 License <a name="license"></a>
 
