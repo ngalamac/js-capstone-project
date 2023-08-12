@@ -39,6 +39,14 @@ Introducing "TV Show Spotter" – a captivating web application that brings TV s
 - **Like a TV show**
 - **Drop a comment**
 
+## 🚀 Live Demo <a name="live-demo"></a>
+- Click <a href="https://ngalamac.github.io/js-capstone-project/dist/">here</a> to open the presentation.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 💻 Project Presentation <a name="presentation"></a>
+- Click <a href="https://drive.google.com/file/d/1fCU-beDra-DCM473orYJxSysBkswqMC0/view?usp=sharing">here</a> to open the presentation.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
